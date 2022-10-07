@@ -30,12 +30,12 @@
     "locations": [
       {
         "blockId": 13,
-        "x": 2000,
-        "y": 1680
+        "x": 2160,
+        "y": 1700
       },
       {
         "blockId": 14,
-        "x": 1740,
+        "x": 1860,
         "y": 1680
       },
       {
@@ -45,13 +45,13 @@
       },
       {
         "blockId": 16,
-        "x": 1240,
-        "y": 1420
+        "x": 1120,
+        "y": 1400
       },
       {
         "blockId": 17,
-        "x": 1240,
-        "y": 1300
+        "x": 1120,
+        "y": 1260
       },
       {
         "blockId": 18,
@@ -60,13 +60,13 @@
       },
       {
         "blockId": 19,
-        "x": 3040,
-        "y": 1100
+        "x": 3020,
+        "y": 1060
       },
       {
         "blockId": 20,
-        "x": 2180,
-        "y": 760
+        "x": 2580,
+        "y": 820
       },
       {
         "blockId": 21,
@@ -75,8 +75,8 @@
       },
       {
         "blockId": 22,
-        "x": 1240,
-        "y": 1540
+        "x": 680,
+        "y": 1580
       },
       {
         "blockId": 23,
@@ -210,19 +210,49 @@
       },
       {
         "blockId": 51,
-        "x": 1500,
-        "y": 0
+        "x": 1680,
+        "y": -140
       },
       {
         "blockId": 52,
+        "x": 1180,
+        "y": 40
+      },
+      {
+        "blockId": 23321,
         "x": 1120,
-        "y": 160
+        "y": 1800
+      },
+      {
+        "blockId": 49414,
+        "x": 1100,
+        "y": 1980
+      },
+      {
+        "blockId": 499564,
+        "x": 1720,
+        "y": 2180
+      },
+      {
+        "blockId": 501206,
+        "x": 1080,
+        "y": 2340
+      },
+      {
+        "blockId": 551197,
+        "x": 1180,
+        "y": 2480
+      },
+      {
+        "blockId": 560980,
+        "x": 1360,
+        "y": 2600
       }
     ],
     "frames": [],
-    "x": 542.5937385737805,
-    "y": 175.1042411563381,
-    "zoom": 0.7972104446064605
+    "x": 815.6043713783808,
+    "y": 48.0978598598856,
+    "zoom": 0.7928146720986304
   },
   "customType": "BABYLON.NodeMaterial",
   "outputNodes": [
@@ -490,7 +520,7 @@
         {
           "name": "baseColor",
           "inputName": "baseColor",
-          "targetBlockId": 47,
+          "targetBlockId": 499564,
           "targetConnectionName": "output",
           "isExposedOnFrame": true,
           "exposedPortPosition": -1
@@ -1155,8 +1185,8 @@
       "convertToLinearSpace": false,
       "valueType": "BABYLON.Vector2",
       "value": [
-        0.112,
-        0.1
+        0,
+        0
       ]
     },
     {
@@ -1185,7 +1215,7 @@
       "convertToGammaSpace": false,
       "convertToLinearSpace": false,
       "valueType": "number",
-      "value": 2654.3017600012345
+      "value": 3927.113020001902
     },
     {
       "customType": "BABYLON.MultiplyBlock",
@@ -1511,8 +1541,8 @@
       "convertToLinearSpace": false,
       "valueType": "BABYLON.Vector2",
       "value": [
-        0.01,
-        0.01
+        0,
+        0
       ]
     },
     {
@@ -1541,7 +1571,7 @@
       "convertToGammaSpace": false,
       "convertToLinearSpace": false,
       "valueType": "number",
-      "value": 2652.2160400012344
+      "value": 3925.027300001902
     },
     {
       "customType": "BABYLON.MultiplyBlock",
@@ -1604,9 +1634,135 @@
       "value": 1.44
     },
     {
+      "customType": "BABYLON.ConditionalBlock",
+      "id": 499564,
+      "name": "Equal",
+      "comments": "",
+      "visibleInInspector": false,
+      "visibleOnFrame": false,
+      "target": 4,
+      "inputs": [
+        {
+          "name": "a",
+          "inputName": "a",
+          "targetBlockId": 49414,
+          "targetConnectionName": "x",
+          "isExposedOnFrame": true,
+          "exposedPortPosition": -1
+        },
+        {
+          "name": "b",
+          "inputName": "b",
+          "targetBlockId": 501206,
+          "targetConnectionName": "output",
+          "isExposedOnFrame": true,
+          "exposedPortPosition": -1
+        },
+        {
+          "name": "true",
+          "inputName": "true",
+          "targetBlockId": 551197,
+          "targetConnectionName": "output",
+          "isExposedOnFrame": true,
+          "exposedPortPosition": -1
+        },
+        {
+          "name": "false",
+          "inputName": "false",
+          "targetBlockId": 560980,
+          "targetConnectionName": "output",
+          "isExposedOnFrame": true,
+          "exposedPortPosition": -1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output"
+        }
+      ],
+      "condition": 0
+    },
+    {
+      "customType": "BABYLON.VectorSplitterBlock",
+      "id": 49414,
+      "name": "VectorSplitter",
+      "comments": "",
+      "visibleInInspector": false,
+      "visibleOnFrame": false,
+      "target": 4,
+      "inputs": [
+        {
+          "name": "xyzw"
+        },
+        {
+          "name": "xyz ",
+          "inputName": "xyz ",
+          "targetBlockId": 22,
+          "targetConnectionName": "output",
+          "isExposedOnFrame": true,
+          "exposedPortPosition": -1
+        },
+        {
+          "name": "xy "
+        }
+      ],
+      "outputs": [
+        {
+          "name": "xyz"
+        },
+        {
+          "name": "xy"
+        },
+        {
+          "name": "zw"
+        },
+        {
+          "name": "x"
+        },
+        {
+          "name": "y"
+        },
+        {
+          "name": "z"
+        },
+        {
+          "name": "w"
+        }
+      ]
+    },
+    {
       "customType": "BABYLON.InputBlock",
-      "id": 47,
-      "name": "BaseColor",
+      "id": 501206,
+      "name": "Float",
+      "comments": "",
+      "visibleInInspector": false,
+      "visibleOnFrame": false,
+      "target": 1,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output"
+        }
+      ],
+      "type": 1,
+      "mode": 0,
+      "systemValue": null,
+      "animationType": 0,
+      "min": 0,
+      "max": 0,
+      "isBoolean": false,
+      "matrixMode": 0,
+      "isConstant": false,
+      "groupInInspector": "",
+      "convertToGammaSpace": false,
+      "convertToLinearSpace": false,
+      "valueType": "number",
+      "value": 0
+    },
+    {
+      "customType": "BABYLON.InputBlock",
+      "id": 551197,
+      "name": "topColor",
       "comments": "",
       "visibleInInspector": true,
       "visibleOnFrame": false,
@@ -1627,12 +1783,45 @@
       "isConstant": false,
       "groupInInspector": "waterMenu",
       "convertToGammaSpace": false,
-      "convertToLinearSpace": false,
+      "convertToLinearSpace": true,
       "valueType": "BABYLON.Color3",
       "value": [
-        0.2235294117647059,
-        0.5450980392156862,
-        0.9098039215686274
+        0,
+        0.9372549019607843,
+        1
+      ]
+    },
+    {
+      "customType": "BABYLON.InputBlock",
+      "id": 560980,
+      "name": "aroundColor",
+      "comments": "",
+      "visibleInInspector": true,
+      "visibleOnFrame": false,
+      "target": 1,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output"
+        }
+      ],
+      "type": 32,
+      "mode": 0,
+      "systemValue": null,
+      "animationType": 0,
+      "min": 0,
+      "max": 0,
+      "isBoolean": false,
+      "matrixMode": 0,
+      "isConstant": false,
+      "groupInInspector": "waterMenu",
+      "convertToGammaSpace": false,
+      "convertToLinearSpace": true,
+      "valueType": "BABYLON.Color3",
+      "value": [
+        0,
+        0.11372549019607843,
+        0.4470588235294118
       ]
     },
     {
@@ -1765,7 +1954,7 @@
     {
       "customType": "BABYLON.InputBlock",
       "id": 52,
-      "name": "Color3",
+      "name": "ReflectColor",
       "comments": "",
       "visibleInInspector": true,
       "visibleOnFrame": false,
@@ -1793,6 +1982,66 @@
         0.13333333333333333,
         0.13333333333333333
       ]
+    },
+    {
+      "customType": "BABYLON.InputBlock",
+      "id": 47,
+      "name": "BaseColor",
+      "comments": "",
+      "visibleInInspector": true,
+      "visibleOnFrame": false,
+      "target": 1,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output"
+        }
+      ],
+      "type": 32,
+      "mode": 0,
+      "animationType": 0,
+      "min": 0,
+      "max": 0,
+      "isBoolean": false,
+      "matrixMode": 0,
+      "isConstant": false,
+      "groupInInspector": "waterMenu",
+      "convertToGammaSpace": false,
+      "convertToLinearSpace": false,
+      "valueType": "BABYLON.Color3",
+      "value": [
+        0.9098039215686274,
+        0.2235294117647059,
+        0.8666666666666667
+      ]
+    },
+    {
+      "customType": "BABYLON.InputBlock",
+      "id": 23321,
+      "name": "Float",
+      "comments": "",
+      "visibleInInspector": false,
+      "visibleOnFrame": false,
+      "target": 1,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output"
+        }
+      ],
+      "type": 1,
+      "mode": 0,
+      "animationType": 0,
+      "min": 0,
+      "max": 0,
+      "isBoolean": false,
+      "matrixMode": 0,
+      "isConstant": false,
+      "groupInInspector": "",
+      "convertToGammaSpace": false,
+      "convertToLinearSpace": false,
+      "valueType": "number",
+      "value": 0
     }
   ]
 }
